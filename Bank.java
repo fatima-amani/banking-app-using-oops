@@ -9,7 +9,7 @@ public class Bank {
         accounts = new ArrayList<>();
     }
 
-    public SavingsAccount openAccount(String accountType,String accountHolderName, double balance) {
+    public SavingsAccount openAccount(String accountType, String accountHolderName, double balance) {
         try {
             if (balance < 0) {
                 throw new IllegalArgumentException("Balance cannot be negative");
@@ -23,23 +23,25 @@ public class Bank {
                 throw new IllegalArgumentException("Invalid account type " + accountType);
             }
         } catch (Exception e) {
-            System.out.println("Error: "+ e.getMessage());
+            System.out.println("Error: " + e.getMessage());
             return null;
         }
     }
 
-    public CheckingAccount openAccount(String accountType,String accountHolderName, double balance, double overdraftLimit) {
+    public CheckingAccount openAccount(String accountType, String accountHolderName, double balance,
+            double overdraftLimit) {
         try {
             if (accountType.equals("checking")) {
                 String accountNumber = getAccountNumber();
-                CheckingAccount newAccount = new CheckingAccount(accountNumber, accountHolderName, balance, overdraftLimit);
+                CheckingAccount newAccount = new CheckingAccount(accountNumber, accountHolderName, balance,
+                        overdraftLimit);
                 accounts.add(newAccount);
                 return newAccount;
             } else {
                 throw new IllegalArgumentException("Invalid account type " + accountType);
             }
         } catch (Exception e) {
-            System.out.println("Error: "+ e.getMessage());
+            System.out.println("Error: " + e.getMessage());
             return null;
         }
     }
@@ -54,10 +56,9 @@ public class Bank {
                     return account;
                 }
             }
-
             throw new RuntimeException("Account does not exist or already closed");
         } catch (Exception e) {
-            System.out.println("Error: "+ e.getMessage());
+            System.out.println("Error: " + e.getMessage());
             return null;
         }
     }
@@ -65,7 +66,7 @@ public class Bank {
     public Account findAccount(String accountNumber) {
         try {
             for (Account account : accounts) {
-                if(account.getAccountNumber().equals(accountNumber)) {
+                if (account.getAccountNumber().equals(accountNumber)) {
                     System.out.println("Account Details: ");
                     account.displayAccountInfo();
                     return account;
@@ -73,11 +74,9 @@ public class Bank {
             }
             throw new RuntimeException("Account does not exist");
         } catch (Exception e) {
-            System.out.println("Error: "+ e.getMessage());
+            System.out.println("Error: " + e.getMessage());
             return null;
         }
-
-
     }
 
     public void displayAllAccounts() {
@@ -95,6 +94,5 @@ public class Bank {
     public void setInterestRate(double interest) {
         SavingsAccount.setInterestRate(interest);
     }
-
 
 }

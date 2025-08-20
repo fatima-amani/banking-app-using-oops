@@ -9,7 +9,7 @@ public class Main {
         CheckingAccount amna = sbi.openAccount("checking", "Amna", 500,10000);
         System.out.println();
 
-//        savings
+        // Savings Account 
         fatima.deposit(5000);
         System.out.println();
         fatima.withdraw(1000);
@@ -23,9 +23,7 @@ public class Main {
         fatima.viewTransactionHistory();
         System.out.println();
 
-
-
-//        checking
+        // Checking Account Operation
         amna.withdraw(5000);
         System.out.println();
         amna.deposit(7000);
@@ -37,7 +35,7 @@ public class Main {
         amna.viewTransactionHistory();
         System.out.println();
 
-//        bank
+        // Bank Operation
         sbi.findAccount(amna.getAccountNumber());
         System.out.println();
         sbi.closeAccount(fatima.getAccountNumber());
@@ -46,7 +44,6 @@ public class Main {
         System.out.println();
         sbi.setInterestRate(5);
 
-
         Bank hdfc = new Bank();
 
         SavingsAccount fatima2 = hdfc.openAccount("savings", "Fatima",123);
@@ -54,7 +51,7 @@ public class Main {
         CheckingAccount amna2 = hdfc.openAccount("checking", "Amna", 500,1000);
         System.out.println();
 
-//        savings
+        // Savings Account 
         fatima2.deposit(-1);
         System.out.println();
         fatima2.withdraw(150);
@@ -68,9 +65,7 @@ public class Main {
         fatima2.viewTransactionHistory();
         System.out.println();
 
-
-
-//        checking
+        // Checking Account Operation
         amna2.withdraw(5000);
         System.out.println();
         amna2.withdraw(150);
@@ -84,8 +79,7 @@ public class Main {
         amna2.viewTransactionHistory();
         System.out.println();
 
-
-//        banks
+        // Bank Operation
         hdfc.findAccount("abcd");
         System.out.println();
         hdfc.closeAccount("efgh");
@@ -93,7 +87,6 @@ public class Main {
         hdfc.displayAllAccounts();
         System.out.println();
         hdfc.setInterestRate(106);
-
 
     }
 }

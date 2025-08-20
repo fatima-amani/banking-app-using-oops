@@ -22,13 +22,12 @@ public class CheckingAccount extends Account {
 
             }
 
-
             System.out.println("Withdrew " + amount + " from account " + this.accountNumber);
             System.out.println(" New balance is " + this.balance + " Overdraft Limit is " + this.overdraftLimit);
 
             return balance;
         } catch (Exception e) {
-            System.out.println("Error: "+ e.getMessage());
+            System.out.println("Error: " + e.getMessage());
             return 0;
         }
     }

@@ -20,7 +20,7 @@ public final class TransactionHistory {
         this.remainingBalance = remainingBalance;
     }
 
-    public void displayTransactionHistory(){
+    public void displayTransactionHistory() {
         System.out.println("Transaction Details: ");
         System.out.println("Transaction Id: " + transactionId);
         System.out.println("Transaction Date: " + transactionDate);
@@ -28,14 +28,6 @@ public final class TransactionHistory {
         System.out.println("Transaction Type: " + transactionType);
         System.out.println("Transaction Amount: " + transactionAmount);
         System.out.println("Remaining Balance: " + remainingBalance);
-
     }
-
-
-
-
-
-
-
 
 }

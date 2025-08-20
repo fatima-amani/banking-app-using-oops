@@ -15,20 +15,17 @@ public class Account {
         displayAccountInfo();
     }
 
-
-    public double deposit(double amount){
+    public double deposit(double amount) {
         try {
             if (amount <= 0) {
                 throw new IllegalArgumentException("Amount must be greater than 0.");
             }
-
             balance += amount;
             System.out.println("Deposited " + amount + " to account " + accountNumber + " New balance is " + balance);
-
             transactionHistory.add(new TransactionHistory("credit", amount, balance));
             return this.balance;
         } catch (Exception e) {
-            System.out.println("Error: "+ e.getMessage());
+            System.out.println("Error: " + e.getMessage());
             return 0;
         }
     }
@@ -42,11 +39,12 @@ public class Account {
                 throw new RuntimeException("Not enough Account Balance");
             }
             balance -= amount;
-            System.out.println("Withdrew " + amount + " to account " + this.accountNumber + " New balance is " + this.balance);
+            System.out.println(
+                    "Withdrew " + amount + " to account " + this.accountNumber + " New balance is " + this.balance);
             transactionHistory.add(new TransactionHistory("debit", amount, balance));
             return balance;
         } catch (Exception e) {
-            System.out.println("Error: "+ e.getMessage());
+            System.out.println("Error: " + e.getMessage());
             return 0;
         }
     }
@@ -57,9 +55,9 @@ public class Account {
     }
 
     public void displayAccountInfo() {
-        System.out.println("Account Number: "+ accountNumber);
-        System.out.println("Account Holder Name: "+ accountHolderName);
-        System.out.println("Account Balance: "+ balance);
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Holder Name: " + accountHolderName);
+        System.out.println("Account Balance: " + balance);
     }
 
     public String getAccountNumber() {
@@ -67,7 +65,7 @@ public class Account {
     }
 
     public void viewTransactionHistory() {
-        System.out.println("-----Trasaction history for: "+ accountNumber+"---- \n");
+        System.out.println("-----Trasaction history for: " + accountNumber + "---- \n");
 
         for (TransactionHistory transactionHistory : transactionHistory) {
             transactionHistory.displayTransactionHistory();
